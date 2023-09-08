@@ -1,0 +1,21 @@
+There are two tables: table1 and table2. 
+Table1 contains the following columns: state, sub_category, and sales. 
+Table2 contains the column: category.
+
+To perform a cross join between these two tables, we can solve the problem using two methods: by using a DAX function and by using Power Query to transform the data.
+
+By using Dax function:
+cross = CROSSJOIN(table1,table2) 
+
+Using Power Query:
+Follow these steps to achieve a cross join between two tables using Power Query:
+1.Open Power Query Editor.
+2.Select the first table, navigate to the "Add Column" tab, and click on "Custom Column."
+3.Give the custom column a name and specify a value, then click the "OK" button.
+4.Select the second table, go to the "Add Column" tab, and click on "Custom Column."
+5.Give the custom column the same name and value that you assigned to the first table's custom column, then click "OK."
+6.Now, go to the "Home" tab in Power Query and click "Merge Queries."
+7.In the Merge Queries dialog box, select the common column you want to join on.
+8.Set the join condition to "Inner join (only matching rows)," then click the "OK" button.
+
+By following these steps, you will have successfully performed a cross join between the two tables using Power Query.
