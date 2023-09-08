@@ -1,0 +1,13 @@
+How to calculate Last N value.
+last7dayssale = 
+CALCULATE([tsales],DATESINPERIOD(Sheet1[Order_Date],MAX(Sheet1[Order_Date]),-7,DAY))
+
+
+How to calculate Last N value by  dynamic value.
+1.create table give dynamic value
+2.create slicer based on dynamic value.
+3.write the dax function
+lastNdayssale = 
+var a=SELECTEDVALUE('Table'[Column1])
+var b=CALCULATE([tsales],DATESINPERIOD(Sheet1[Order_Date],MAX(Sheet1[Order_Date]),a,DAY))
+return b
