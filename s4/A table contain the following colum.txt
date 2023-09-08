@@ -1,0 +1,7 @@
+A table contain the following column such as state,sub_state,sub_category,sales.
+The question is 
+1.How many times "Kentucky" is there in sub_state?
+countKentucky = CALCULATE(COUNT(Sheet1[Sub_state]),SEARCH("Kentucky",Sheet1[Sub_state],1,0))
+
+2.Find the percentage of "Kentucky" in sub_state?
+%ofKentuchy = DIVIDE([countKentucky],COUNTROWS(Sheet1)) 
