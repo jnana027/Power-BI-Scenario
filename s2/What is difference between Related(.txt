@@ -1,0 +1,10 @@
+What is difference between Related() and lookupvalue().
+These two functions are useful for managing and utilizing relationships between tables.
+ If you want to retrieve a column from another dataset, you should use 'Related' and 'Lookupvalue' based on the rules outlined below
+
+Related():
+1.A relationship between the datasets is necessary.
+2.Cardinality should be one of the following: 1-1, 1-*, or *-1. (1 represents one, and * represents many.)
+
+lookupvalue():
+Relationship is not required between the data sets.

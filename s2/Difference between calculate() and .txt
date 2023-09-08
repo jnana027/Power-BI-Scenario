@@ -1,0 +1,16 @@
+Difference between calculate() and calculatetable().
+The calculate() function requires, as its first argument, an expression that returns a single value, while the calculateTable() function takes a table of values and returns a table.
+syn:
+   calculate(expression,[filter],....)
+   calculatetable(table,[filter],....)
+-In calculate() we use 'New Measure' Option.In calculatetable() we use 'New Table' Option.
+-calculate(),It is used to perform calculations on individual rows of a table or dataset.
+-calculateTable(), it is used for a different purpose. Instead of operating on individual rows, it operates on tables or subsets of tables. 
+
+Ex:
+1.count total employee who belongs to logistics.
+clog=calculate(count(emp[empid]),emp[dept]='logistics')
+
+2.Return a separate table with employee who belongs to logistics.
+clog=calculatetable(emp,emp[dept]='logistics')
+ 

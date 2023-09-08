@@ -1,0 +1,38 @@
+How you calculate total sales or revenue using inactive relation between Dimension and fact table.
+
+We solve that problem using three dax function
+1.Related()
+2.Lookupvalue()
+3.userrelationship()
+
+1>Total Sales (Inactive) = 
+SUMX(
+    FILTER(
+        'Sales',
+        RELATED('Date'[Date]) = 'Sales'[OrderDate]
+    ),
+    'Sales'[SalesAmount]
+)
+
+
+
+2>Total Sales =
+SUMX(
+    FactSales,
+    FactSales[SalesAmount] *
+    LOOKUPVALUE(
+        DimProduct[ProductName],  // Column to retrieve from DimProduct
+        DimProduct[ProductID],    // Column to match with FactSales
+        FactSales[ProductID]      // Column in FactSales
+    )
+)
+
+
+
+
+3.Total Sales =
+SUMX(
+    FactSales,
+    FactSales[SalesAmount] *
+    RELATED(DimProduct[ProductName])
+)
