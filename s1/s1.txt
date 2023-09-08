@@ -1,0 +1,101 @@
+Find matching data,left table data those are not matching,right table data those are not matching.
+There are two tables, table1 and table2, containing the same columns:name, dept_id, salary, and age."
+Table1 contain the 6 rows and the following data is
+('Ankit',100,10000,39)
+('Mohit',100,15000,48)
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+
+Table2 contain the 6 rows and the following data is
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+('Sanjay',200,9000,13) 
+('Ashish',200,5000,12)
+
+Find matching data:
+we solve that problem in two ways by using Merge queries and by using dax.
+using Merge queries:
+1.click merge queries(Merge queries as new)
+2.select common column between two tables
+3.select "join kind" as 'inner'
+4.click ok
+
+using dax function:
+Matching_data = INTERSECT( Sheet1,Sheet2)
+
+the output is:
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+
+Find the data in the left table that does not match with the data in the right table.
+There are two tables, table1 and table2, containing the same columns:name, dept_id, salary, and age."
+Table1 contain the 6 rows and the following data is
+('Ankit',100,10000,39)
+('Mohit',100,15000,48)
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+
+Table2 contain the 6 rows and the following data is
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+('Sanjay',200,9000,13) 
+('Ashish',200,5000,12)
+
+We can solve that problem in two ways: by using merge queries and by using DAX.
+
+by using merge queries :
+1.click merge queries(Merge queries as new)
+2.select common column between two tables
+3.select "join kind" as 'left Anti'
+4.click ok
+
+by using DAX
+EXCEPT(Sheet1,Sheet2)
+
+the output is:
+('Ankit',100,10000,39)
+('Mohit',100,15000,48)
+
+
+Find the data in the right table that does not match with the data in the left table.
+There are two tables, table1 and table2, containing the same columns:name, dept_id, salary, and age."
+Table1 contain the 6 rows and the following data is
+('Ankit',100,10000,39)
+('Mohit',100,15000,48)
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+
+Table2 contain the 6 rows and the following data is
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+('Sanjay',200,9000,13) 
+('Ashish',200,5000,12)
+
+We can solve that problem in two ways: by using merge queries and by using DAX.
+
+by using merge queries :
+1.click merge queries(Merge queries as new)
+2.select common column between two tables
+3.select "join kind" as 'Right Anti'
+4.click ok
+
+by using DAX
+EXCEPT(Sheet2,Sheet1)
+
+the output is:
+('Sanjay',200,9000,13) 
+('Ashish',200,5000,12)
