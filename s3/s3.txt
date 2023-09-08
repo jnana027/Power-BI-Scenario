@@ -1,0 +1,33 @@
+Find top N.
+Top N ,return a given number of rows according to specified expression.
+syn:
+  topN(n-value.<table>,<orderby-expression>,[<order>],.........)
+There are table, name table1 , containing the  columns:name, dept_id, salary, and age."
+Table1 contain the 6 rows and the following data is
+('Ankit',100,10000,39)
+('Mohit',100,15000,48)
+('Vikas',100,10000,37)
+('Rohit',100,5000,16)
+('Mudit',200,12000,55)
+('Agam',200,12000,14)
+
+Find the top 2 oldest rows based on the age column.
+top2 = TOPN(2,Sheet1,Sheet1[age],DESC)
+
+The output is
+('Mudit',200,12000,55)
+('Mohit',100,15000,48)
+
+By using new measure we calculate top 2 oldest rows based on the age column
+ccal = CALCULATE([tsal],FILTER(VALUES(Sheet1[age]),RANKX(Sheet1,[tsal],,DESC,Dense)>2))
+
+
+How to calculate a dynamic top N measure:
+
+Step 1: Create a table and populate it with values (click 'Enter Data' and fill in the values).
+Step 2: Use that table to create a slicer visual.
+step3: create a new measure
+       dagesal = 
+             var a=SELECTEDVALUE('Table'[Column1],1)
+             var b=CALCULATE(SUM(Sheet1[salary]),TOPN(a,Sheet1,Sheet1[age]))
+             return b
