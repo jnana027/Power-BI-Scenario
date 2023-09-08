@@ -1,0 +1,17 @@
+How to split column:
+There are two ways we split the column by using Power query(Transform) and by using Dax.
+
+>Here is the corrected step-by-step guide on how to split a column using Power Query (Transform):
+
+1.Open Power Query Editor.
+2.In the Power Query Editor, navigate to the "Add Column" option on the toolbar.
+3.Select the column on which you want to perform the split operation.
+4.Click on the "Transform" tab.
+5.Choose the "Split Column" option.
+6.Select the appropriate delimiter you want to use for splitting the column.
+
+>Here is the corrected step-by-step guide on how to split a column by using Dax.
+find first name:
+fname = LEFT(Sheet1[Name],FIND(" ",Sheet1[Name])-1)
+find last name:
+lname = RIGHT(Sheet1[Name],LEN(Sheet1[Name])-FIND(" ",Sheet1[Name]))
