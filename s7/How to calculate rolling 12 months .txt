@@ -1,0 +1,5 @@
+How to calculate rolling 12 months average sales:
+The term "rolling 12 months average sales per month" refers to computes the rolling average of the Sales Amount measure over the last 12 months.
+ By Using "calculate and Datesinperiod" dax function we solve that question
+ROLLING12MONTH = 
+CALCULATE(AVERAGE(ROLLING[SALES]),DATESINPERIOD(ROLLING[Order_Date],MAX(ROLLING[Order_Date]),-12,MONTH))
