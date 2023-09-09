@@ -1,0 +1,24 @@
+How to draw Default slicer value:
+The default slicer value in Power BI refers to the initial selection that is displayed in a slicer when the report is loaded or refreshed.
+Ex:There is a table have two column state and sales column. 
+State column have following state
+Kentucky,California,Florida,North Carolina,Washington,Texas,Wisconsin,Utah,Nebraska,Pennsylvania,Utah
+
+Sales column have following sales 261.96,731.94,14.62,957.5775,22.368,48.86,7.28,907.152,18.504,114.9,1706.184
+
+The total sales is 4.79k
+totalsales = SUM(Sheet1[Sales])
+
+ create a default slicer selection for the state of Florida in your Power BI report.
+1.Create a Slicer Visual:
+In Power BI Desktop, select the slicer visual from the "Visualizations" pane.
+Drag the "State" column from your table into the slicer visual.
+2.Set Default Slicer Value:
+By using that dax function we Set Default Slicer Value.
+defaultslicer = 
+var a=SELECTEDVALUE(Sheet1[State],"Florida")
+var b=CALCULATE([totalsales],Sheet1[State]=a)
+return b
+
+slicer will now have "Florida" as the default selected state 
+
