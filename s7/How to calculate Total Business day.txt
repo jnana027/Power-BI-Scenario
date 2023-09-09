@@ -1,0 +1,8 @@
+How to calculate Total Business days between two days.
+Ex:An order table contains two columns: 'order_date' and 'ship_date.' Calculate the working days of an employee between these two dates.
+
+networkingdays = 
+var a=SELECTEDVALUE(net[Order_Date])
+var b=SELECTEDVALUE(net[Ship_Date])
+var c=NETWORKDAYS(a,b)
+return c
