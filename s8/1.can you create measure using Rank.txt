@@ -1,0 +1,11 @@
+1.can you create measure using Rankx(yes/no).if yes how you create measure using Rankx(find rank based on sale for each Region)?
+yes we can create measure using Rankx.
+steps:
+Open your Power BI Desktop or DAX editor.
+In the "Model" or "Data" view, create a new measure by right-clicking on the table you want to add the measure to and selecting "New Measure."
+
+Provide a name for your measure. For example, let's call it "SalesRank."
+SalesRank = RANKX(ALL('rank'[Region]),[totalsale],,DESC,Dense)
+
+2.suppose Region slicer is there in your report if select the region based on sales of region show the rank how you do that means To show the rank of sales for a selected region using a slicer in your report?
+rk = RANKX(ALLSELECTED('rank'[Region]),[totalsale],,DESC,Dense)
