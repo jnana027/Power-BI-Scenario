@@ -1,0 +1,23 @@
+Suppose y axis contain sales data and x axis contain month name from January to December .The User want 
+To set April as the starting sales month and March as the ending sales month on the X-axis that means (1=April,2=May,3=June,...............,11=February,12=March) .How to solve that problem.
+
+We solve that problem in two ways:
+method-1( By using Swithch function):
+New month no = 
+SWITCH('date'[Month],
+"April",1,
+"May",2,
+"June",3,
+"July",4,
+"Augest",5,
+"September",6,
+"October",7,
+"November",8,
+"December",9,
+"January",10,
+"February",11,
+12)
+
+Method-2:
+New mth no = 
+IF('date'[Month no]>3,'date'[Month no]-1,'date'[Month no]+9)
