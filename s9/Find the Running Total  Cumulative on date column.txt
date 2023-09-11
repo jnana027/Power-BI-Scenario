@@ -1,0 +1,16 @@
+Find the Running Total / Cumulative Total:
+Running total bases date column:
+Assuming you have a table named "Rank" with a date column "Date" and a sales amount column "sale," you can create a DAX measure to calculate running sales as follows:
+Open your Power BI Desktop or Excel Power Pivot where you are working with your data.
+
+Click on the "Model" view to ensure you are in the Data Model.
+
+In the "Model" view, locate your table (e.g., "Rank") and right-click on it. Then, select "New Measure" to create a new DAX measure.
+
+Name your measure (e.g., "runningsales").
+
+Enter the following DAX formula to calculate the running sales:
+
+runningsales = CALCULATE([totalsales],FILTER(all('date'),'date'[Date]<=MAX('date'[Date])))
+                                   OR
+cumilativesales = CALCULATE([totalsales],FILTER(ALL('date'[Date]),'date'[Date]<=MAX('date'[Date])))
