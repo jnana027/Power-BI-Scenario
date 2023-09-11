@@ -1,0 +1,28 @@
+Find the Running Total / Cumulative Total:
+Running total based on Non-date column:
+Assuming you have a table named "Product" with a non-date column "Productname" and a sales amount column "sale," and you want to calculate running sales based on the "Productname," you can create a DAX measure as follows:
+Open your Power BI Desktop or Excel Power Pivot where you are working with your data.
+
+Click on the "Model" view to ensure you are in the Data Model.
+
+In the "Model" view, locate your table (e.g., "Product") and right-click on it. Then, select "New Measure" to create a new DAX measure.
+
+Name your measure (e.g., "Running Sales by Productname").
+
+Enter the following DAX formula to calculate the running sales based on the "Productname":
+
+method 1:
+tsale = SUM('product'[SALES])
+
+rsale = 
+var a=RANKX(ALL('product'[Product]),[tsale],,DESC,Dense)
+var b=CALCULATE([tsale],
+FILTER(ALL('product'[Product]),RANKX(ALL('product'[Product]),[tsale],,DESC,Dense)<=a))
+return b
+
+method 2:
+tsale = SUM('product'[SALES])
+
+cumsales = 
+CALCULATE([totalsale],
+FILTER(ALL(Sheet1[Product]),Sheet1[Product]<=MAX(Sheet1[Product])))
