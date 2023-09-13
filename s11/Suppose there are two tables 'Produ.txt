@@ -1,0 +1,10 @@
+Suppose there are two tables: 'Productlist,' which contains one column for 'Product name,' and 'sales summery,' which contains the following columns: 'segment,' 'country,' 'product,' and 'qty sold.
+
+These two tables are connected with each other, meaning there is no direct relationship between them.
+1.Which function is helpful for connecting two tables if they are not connected directly through a relationship ?
+
+2.If the two tables are not connected, you can use the 'TREATAS()' function to calculate the total quantity based on the number of products that are present in the 'Productlist' table ?
+
+treatas = CALCULATE(SUM('Sales Summary'[Qty Sold]),TREATAS(VALUES('Product List'[Product Code]),'Sales Summary'[Product]))
+
+Values function return single table or column with unique value.
