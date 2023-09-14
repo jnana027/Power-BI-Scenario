@@ -1,0 +1,48 @@
+How to create dynamic title name in power BI ?
+
+In Power BI, We can create dynamic title names using DAX (Data Analysis Expressions) expressions and measures. Dynamic titles can help provide context to your reports and dashboards, making them more informative and user-friendly. 
+Here's how you can create dynamic title names in Power BI:
+
+1.Create a New Measure:
+
+   >Open your Power BI report.
+   >In the Fields pane, right-click on the "Measures" folder and select "New Measure."
+   >Name your measure (e.g., "Dynamic Title").
+2.Write a DAX Expression:
+
+   >In the formula bar, write a DAX expression that generates the dynamic title based on your data or
+    conditions.
+     1.Using a Measure Value:
+      Dynamic Title = "Total Sales: $" & SUM(Sales[SalesAmount])
+    
+     This example creates a title that displays the total sales amount.
+
+     2.Using Parameters or Slicers:
+        If you have parameters or slicers in your report, you can reference them in your DAX expression.
+          For instance, if you have a slicer for the region, you can create a dynamic title like this:
+        Total sales = "Total sale " & SELECTEDVALUE(Sheet1[Region],"All region")
+       
+      This will display a title such as "Total sale Asia" based on the selected region in the slicer.
+     
+     3.Using IF Statements:
+      You can use IF statements to conditionally generate titles. For example:
+      
+       selected region sales = 
+                     var r=SELECTEDVALUE(Sheet1[Region])
+                     return
+                       if(ISBLANK(r),
+                       "Total sales by all region",
+                        CONCATENATE("Total sales by: ",r)
+                          )
+
+        This will show "Total sales by [r]" if a specific month is selected, or "Total sales by all  
+        region" if no specific month is chosen.
+
+3.Assign the Measure to the Title Property:
+
+       >In your report page, select the visual element (e.g., a card or text box) where you want the 
+        dynamic title to appear.
+       >In the "Visualizations" pane, go to the "Title" section.
+       >In the "Title Text" field, click the fx (function) icon to open the formula bar.
+       >Enter the measure you created in step 2. For example, if your measure is named "Dynamic Title,"
+         enter:Dynamic Title
