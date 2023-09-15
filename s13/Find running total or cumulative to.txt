@@ -1,0 +1,28 @@
+Find running total or cumulative total by using Earlier() dax function ?
+Earlier() is useful for nested calculations where you want to use a certain value as an input and produce calculations based on that input.
+
+Ex:cumulativetotal = 
+CALCULATE(SUM('Sales Summary'[Gross Sale]),
+FILTER('Sales Summary',
+'Sales Summary'[Gross Sale]<=EARLIER('Sales Summary'[Gross Sale])))
+
+Find the ranking by using Earlier() dax function ?
+
+coutrowdesc = 
+CALCULATE(COUNT('Sales Summary'[Gross Sale]),
+FILTER('Sales Summary','Sales Summary'[Gross Sale]>=EARLIER('Sales Summary'[Gross Sale])))
+
+in that we find out the index based on Gross Sale in descending order.
+
+coutrowAsc =
+ CALCULATE(COUNT('Sales Summary'[Gross Sale]),
+FILTER('Sales Summary','Sales Summary'[Gross Sale]<=EARLIER('Sales Summary'[Gross Sale])))
+
+in that we find out the index based on Gross Sale in ascending order.
+
+crow = 
+CALCULATE(COUNT('earlier'[Supplier]),
+FILTER('earlier',
+AND('earlier'[Apple Phone]=EARLIER('earlier'[Apple Phone]),
+'earlier'[Supplier]<=EARLIER('earlier'[Supplier]))))
+in that we find out the index based on Apple Phone column and Supplier column.
