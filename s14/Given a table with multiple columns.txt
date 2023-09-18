@@ -1,0 +1,12 @@
+Given a table with multiple columns, I need to write a DAX expression to create a new table that includes only three columns, each with specific conditions:
+
+Product ID (should be less than or equal to 100).
+Product Name (should start with 'S').
+Product Price (should be greater than or equal to 500).
+
+
+Required table = CALCULATETABLE
+(SUMMARIZECOLUMNS('product'[Price],'product'[Product id],'product'[Product name ]),
+                                         'product'[Price]>=500,
+                                        'product'[Product id]<=100,
+                                         LEFT(SEARCH("s",'product'[Product name ],1,BLANK()),1))
