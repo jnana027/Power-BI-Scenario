@@ -1,0 +1,28 @@
+What is difference between summarize() and summarizecolumns() in power BI.
+
+Both of these functions are used to create summarised tables.
+The difference between the two is that the SUMMARIZE function allows us to have a row and a filter context within the expression whereas the SUMMARIZECOLUMNS function only allows us to have a filter context and no row context.
+
+syn of SUMMARIZECOLUMNS:
+   SUMMARIZECOLUMNS( <groupBy_columnName> [, < groupBy_columnName >]…, [<filterTable>]…[, <name>, <expression>]…)
+
+
+Ex:Create a new table for sales and profits in each region where color is black and Business segment is equal to bike.
+   summarize column =       SUMMARIZECOLUMNS(TrainingSample2[Country],
+                            FILTER(TrainingSample2,
+                           AND(TrainingSample2[Color]="black",TrainingSample2[Business Segment]="bikes")),
+                            "Total sales",[total sales],
+                            "Total Profit",[Total Profit])
+
+syn of SUMMARIZE:
+   SUMMARIZE (<table>, <groupBy_columnName>[, <groupBy_columnName>]…[, <name>, <expression>]…)
+
+
+Ex:Create a new table for sales and profits in each region.
+
+total sales = SUM(TrainingSample2[sales])
+
+Total Profit = SUMX(TrainingSample2,TrainingSample2[sales]-TrainingSample2[cost])
+
+summarize table = SUMMARIZE(TrainingSample2,TrainingSample2[Country],"total sales",[total sales],"Total Profit",[Total Profit])
+
