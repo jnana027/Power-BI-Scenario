@@ -1,0 +1,21 @@
+🔶️Let's discuss about the Important top 20 questions that are asked in PowerBI interviews in this post.
+
+1.What are Calculated columns ❓️
+2.What are calculated measures in power bi and where can be created in Power BI❓️
+3.Difference between Calculated Column and Measure in Power bi❓️
+4. Difference between Slicers and Filters❓️
+5.What are M codes in power bi & where can you write Power Query M Code❓️
+6. What are Parameters in Power bi❓️ 7.What is Power BI data gateway❓️
+8. Do we need data gateway for schedule refresh ind Power bi❓️
+9.What is Query Folding in Power bi❓️
+10. Difference between visual level, page level and report level filters in power bi❓️
+11.Difference between ALL and ALL EXCEPT functions❓️
+12. What is "What if" parameter in power bi❓️
+13. How to keep or remove specific rows in power bi❓️
+14.What is grouping in power bi and how to use it❓️
+15.Difference between Distinct and Values in power bi❓️
+16.What is DAX and most common DAX Functions used❓️
+17. What is Power Query❓️
+18. What are the different types of filters in Power BI Reports❓️
+19.Difference between sum and sumx in power bi❓️
+20.Import Query vs Direct Query in power bi❓️
