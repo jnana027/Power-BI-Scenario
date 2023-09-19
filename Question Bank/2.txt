@@ -1,0 +1,48 @@
+Which data sources you have been used in Power BI?
+▶️ What is direct query & import query and it's diff?
+▶️ Can we create calculated column in direct query?
+▶️ What are all transformations you have done in power query?
+▶️ What is fuzzy join?
+▶️ What are types of joins in Power BI and what is the join by default?
+▶️ What is live connection?
+▶️ What is SELECTEDVALUE DAX function and at which scenario need to use this function?
+▶️ What is ISINSCOPE DAX function?
+▶️ How many workspaces are available for the project you are working?
+▶️ How do you refresh dashboards?
+▶️ Bookmarks have you used?
+▶️ What is the difference between calculated column & calculated measure?
+▶️ SUM and SUMX can you explain at which scenario we can use?
+▶️ What is ALLSELECTED DAX function?
+▶️ What is the Power BI Premium & Pro license features?
+▶️ Which version you have used in your project?
+▶️ What are data flows in Power BI?
+▶️ What are PowerApps and did you developed any canvas Power App?
+▶️ Can you implement Power App in Power BI desktop?
+▶️ What are deployment pipelines in Power BI service?
+▶️ Workspaces how you have been created?
+▶️ How have you been following the versions?
+▶️ What will be default joins when we merge two tables?
+▶️ If there is any string difference when we merge then can we go for fuzzy join?
+▶️ What are analytical functions in SQL?
+▶️ How will you find last employee hired in the company by using lead and lag function?
+▶️ What is UNION and UNION ALL and when to use which function?
+▶️ Can you explain Rank, Dense rank and Row num?
+▶️ Write a query to get the 2nd highest salary?
+▶️ What is Pivot and Unpivot in power query?
+▶️ What is Live connection & direct query connectivity mode and it's difference?
+▶️ Which schema you have used
+in a matrix visual?
+▶️ I'm having APAC,EMEA, and INDIA. So I need to show average sales for each region and in total I need to show total sum of sales. Can you write a measure?
+▶️ What is SUMMARIZE DAX function?
+▶️ What is FILTER DAX function in Power BI?
+▶️ How will you find duplicates in SQL?
+▶️ What is custom query and SQL query?
+▶️ Why have you used custom query?
+▶️ What are challenges you faced in your project?
+▶️Did you implemented RLS in Power BI?
+▶️ How will you do incremental refresh?
+▶️ Have you used custom visual?
+▶️ How will you convince customer to use custom visual?
+▶️ What are joins in SQL and explain use case?
+▶️ How do you handle many to many relationships between 2 tables?
+▶️ If we want to know current to last year sales how will you write a measure?
