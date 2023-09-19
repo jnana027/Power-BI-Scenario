@@ -1,0 +1,27 @@
+✨𝗧𝗼𝗽 B𝗮𝘀𝗶𝗰 𝘁𝗼 A𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗘𝘅𝗰𝗲𝗹 𝗶𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 𝗳𝗼𝗿 𝗱𝗮𝘁𝗮 𝗮𝗻𝗮𝗹𝘆𝘀𝘁 ✨
+
+1: What is Excel, and why is it essential for a data analyst?
+2: Can you explain the difference between a workbook and a worksheet in Excel?
+3: How do you create a new worksheet in an existing Excel workbook?
+4: What is a cell reference in Excel, and why is it important for data analysis?
+6: Explain the purpose of conditional formatting in Excel and provide an example of when you might use it.
+7: What is the purpose of a pivot table in Excel, and how can it assist in data analysis?
+9: Can you describe the steps to create a chart or graph in Excel?
+10: What are absolute cell references in Excel, and when to use them?
+11: Explain the INDEX-MATCH formula and its advantages over VLOOKUP.
+12: How do you create a dynamic named range in Excel, and why might you use one in data analysis?
+13: What are array formulas in Excel, and can you provide an example of when you might use them for data analysis?
+14: Describe the steps to create a pivot table with multiple data sources in Excel.
+15: How can you use the IFERROR function in Excel, and why is it useful for data analysis?
+16: What is the Data Model in Excel, and how does it differ from a regular worksheet? How can it be advantageous for data analysis?
+17: Can you explain the purpose of the HLOOKUP function in Excel, and provide an example of its usage?
+18: How do you use the CONCATENATE or CONCAT function in Excel to combine text from multiple cells, and why is this valuable in data analysis?
+19: Describe the steps to create a drop-down list (data validation) in Excel, and explain how it can enhance data entry and analysis.
+20: What is the purpose of the TRANSPOSE function in Excel, and when might you use it for data manipulation?
+21: Explain the purpose of Power Query in Excel, and how can it be beneficial for data analysts?
+22: What are PivotTable slicers in Excel, and how can they enhance the interactivity and usability of PivotTables for data analysis?
+23: Can you describe the steps to create a calculated field in a PivotTable, and provide an example of when you might use this feature in data analysis?
+24: What is the DAX (Data Analysis Expressions) language in Excel, and how can it be used for advanced calculations in data analysis?
+25: How do you use the Get & Transform Data feature (Power Query) to merge multiple data sources in Excel, and why is this valuable for data analysts?
+26: Explain the purpose of a sensitivity analysis (What-If analysis) in Excel, and provide an example of when you might use it for decision-making in data analysis.
+27: Explain the concept of array functions in Excel, and provide an example of when you use an array formula in complex data analysis.
