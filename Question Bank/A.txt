@@ -1,0 +1,30 @@
+1.Data and core concepts Questions -(10-15%)
+2.SQL questions (30-40%)
+3.Power BI questions (50%)
+
+✔️The following are some of the important questions for each section .
+
+🟡Data and core concepts Questions -(10-15%)
+
+➡️OLTP vs OLAP
+➡️Normalization and its types
+➡️Slowly changing dimensions
+➡️Types of Facts and Dimension
+➡️Types of Tables and keys
+➡️What is ETL❓
+➡️Types of Analysis
+➡️What is Relational Database❓
+➡️What is Datawarehousing & Data Lake❓
+
+🟠SQL questions (30-40%)
+
+➡️Difference between Delete, Truncate and Drop
+➡️How to find highest third salary, marks❓
+➡️Difference between Union and Union all
+➡️What are Temporary Tables❓
+➡️Stored Procedures and views
+➡️What are indexing and it's types and use of it❓
+➡️Subsets in SQL
+➡️Ranking in SQL
+➡️Results of Left join, Right join and inner join
+➡️Constraints and its types
