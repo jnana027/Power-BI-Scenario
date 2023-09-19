@@ -1,0 +1,15 @@
+➡️What is difference between Row and Filter Context❓
+➡️Difference between SUM and SUMX
+➡️Difference between Append and Merged
+➡️Types of Filters
+➡️Modelling core Concepts
+➡️Time Intelligence- DAX functions
+➡️What are Bookmarks and use if it❓
+➡️Difference Between Duplicates and References
+➡️Difference Between Measures and Calculated columns
+➡️Row Level Security
+➡️4 Roles in Power BI
+➡️Workspace and Apps
+➡️Schedule Refresh and Data Gateways
+➡️Data Profiling
+➡️Calculate,Summarize,Related, All(3) DAX functions
