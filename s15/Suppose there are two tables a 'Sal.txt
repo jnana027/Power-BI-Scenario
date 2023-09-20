@@ -1,0 +1,81 @@
+Suppose there are two tables: a 'Sales' table containing transaction data from an ecommerce website and a 'Calendar' table containing calendar data from 2020 to 2022.
+can you create a measure to show me 
+1.What is the total number of customers in a particular range?.
+2.What is the total number of customers from last year within a particular range? 
+3.Find the common customers within a particular range?
+
+
+1.Total Number of Customers in a Specific Date Range:
+
+
+   total customer = COUNTROWS(CALCULATETABLE(VALUES(sale[customer name]),
+                        DATESBETWEEN('date'[Date],MIN('date'[Date]),MAX('date'[Date]))))
+
+This measure calculates the total number of unique customers in the Sales table for the selected date range.
+
+
+2.Total Number of Customers from the Previous Year in a Specific Date Range:
+     last year customer = COUNTROWS(CALCULATETABLE(VALUES(sale[customer name]),
+                              DATESBETWEEN('date'[Date],MIN('date'[Date])-365,MAX('date'[Date])-365)))
+
+
+   This measure calculates the total number of unique customers in the Sales table for the same date range in the previous year.
+
+
+3.Find the Common Customers in a Specific Date Range:
+     common customer = COUNTROWS(INTERSECT(CALCULATETABLE(VALUES(sale[customer name]),
+                      DATESBETWEEN('date'[Date],MIN('date'[Date]),MAX('date'[Date]))),
+                                             CALCULATETABLE(VALUES(sale[customer name]),
+                            DATESBETWEEN('date'[Date],MIN('date'[Date])-365,MAX('date'[Date])-365))))
+
+
+This measure calculates the number of common customers between the current year and the previous year within the specified date range.
+
+
+Another you also that problem:
+1.Total Number of Customers in a Specific Date Range:
+  Total Customers = COUNTROWS(SUMMARIZE(Sales, Sales[Customer ID]))
+
+This measure calculates the total number of unique customers in the Sales table for the selected date range.
+
+2.Total Number of Customers from the Previous Year in a Specific Date Range:
+
+Total Customers Last Year = 
+VAR SelectedDate = MAX(Calendar[Date])
+VAR PreviousYearStartDate = DATEADD(SelectedDate, -1, YEAR)
+VAR PreviousYearEndDate = DATEADD(SelectedDate, -1, DAY)
+RETURN
+CALCULATE(
+    COUNTROWS(SUMMARIZE(Sales, Sales[Customer ID])),
+    FILTER(
+        ALL(Calendar),
+        Calendar[Date] >= PreviousYearStartDate && Calendar[Date] <= PreviousYearEndDate
+    )
+)
+
+This measure calculates the total number of unique customers in the Sales table for the same date range in the previous year.
+
+3.Find the Common Customers in a Specific Date Range:
+Common Customers = 
+VAR SelectedDate = MAX(Calendar[Date])
+VAR PreviousYearStartDate = DATEADD(SelectedDate, -1, YEAR)
+VAR PreviousYearEndDate = DATEADD(SelectedDate, -1, DAY)
+VAR CurrentYearCustomers = SUMMARIZE(Sales, Sales[Customer ID])
+VAR PreviousYearCustomers = CALCULATETABLE(
+    SUMMARIZE(Sales, Sales[Customer ID]),
+    FILTER(
+        ALL(Calendar),
+        Calendar[Date] >= PreviousYearStartDate && Calendar[Date] <= PreviousYearEndDate
+    )
+)
+RETURN
+COUNTROWS(
+    INTERSECT(
+        CurrentYearCustomers,
+        PreviousYearCustomers
+    )
+)
+
+
+This measure calculates the number of common customers between the current year and the previous year within the specified date range.
+
