@@ -1,0 +1,20 @@
+Scenario Based Question on 'Field Parameter':
+Suppose you have a line chart with the X-axis containing months from January to December, and the Y-axis containing different measures such as Total Liters consumed, Total Drivers, Total Kilometers Traveled, Total Fixed Costs, Total Fuel consumed, and Total Maintenance Cost.
+How can you draw a line chart to display these values based on the selected measure?.
+
+Solution:
+1.open Power Bi Desktop
+2.Go to Modeling, choose 'New Parameter.' In 'New Parameter,' there are two options: 1. Numeric Range and 2. Fields. Choose 'Fields
+3.Give the name of the parameter name
+Ex:Switch Driver Measures
+4.Then add measure in "Add and records fields":
+Switch Driver Measures = {
+    ("Total liters consumed", NAMEOF('Measure Table'[Total liters consumed]), 0),
+    ("Total Maintenace cost", NAMEOF('Measure Table'[Total Maintenace cost]), 1),
+    ("Total Fuel consumed", NAMEOF('Measure Table'[Total Fuel consumed]), 2),
+    ("Total KM Travelled", NAMEOF('Measure Table'[Total KM Travelled]), 3),
+    ("Total fix cost", NAMEOF('Measure Table'[Total fix cost]), 4),
+    ("Total Driver", NAMEOF('Measure Table'[Total Driver]), 5)
+Total Liters consumed, Total Drivers, Total Kilometers Traveled, Total Fixed Costs, Total Fuel consumed, and Total Maintenance Cost
+5.then click ok Button.
+6.Draw a line chart with the Month column on the X-axis and the parameter name you provided on the Y-axis.
